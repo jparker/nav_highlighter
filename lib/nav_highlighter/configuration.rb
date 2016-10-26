@@ -4,11 +4,12 @@ module NavHighlighter
     self.highlight_class = 'active'
   end
 
-  def self.config
-    Configuration
+  def self.configure
+    yield config if block_given?
+    config
   end
 
-  def self.configure
-    yield Configuration
+  def self.config
+    Configuration
   end
 end
