@@ -3,8 +3,8 @@ Tools for highlighting the active item in a nav element.
 
 ## Usage
 
-To use NavHighlighter you need to make the #nav_item helper method available to
-the views and the #nav_highlight method available to controllers.
+To use NavHighlighter you need to make the `#nav_item` helper method available
+to the views and the `#nav_highlight` method available to controllers.
 
 ```ruby
 class ApplicationController
@@ -16,11 +16,11 @@ class ApplicationController
 end
 ```
 
-In your controllers, call #nav_highlight to specify the name of the nav item
+In your controllers, call `#nav_highlight` to specify the name of the nav item
 that should be highlighted when views from that particular controller are
 rendered. The name of the nav item to be highlighted will be inferred from the
 name of the controller, e.g., AuthorsController would map to a nav item named
-`:authors`. (This can be configured when calling #nav_highlight.)
+`:authors`. (This can be configured when calling `#nav_highlight`.)
 
 ```ruby
 class AuthorsController < ApplicationController
@@ -35,10 +35,11 @@ class HomeController < ApplicationController
 end
 ```
 
-Finally, where ever you render your nav element, use the #nav_item helper. Pass
-the name of the item as an argument. If no name is passed, the nav item will be
-unnamed. If the nav is rendered from a controller that does not call
-#nav_highlight, the unnamed item will be highlighted.
+Finally, when you render your nav element, use the `#nav_item` helper. Pass the
+name of the item using the `:name` keyword argument. If no name is passed, the
+nav item will be unnamed. If the nav is rendered from a controller that doesn't
+call `#nav_highlight`, the unnamed item will be highlighted. (Item names should
+be unique within a nav element. This also goes for unnamed items.)
 
 ```erb
 <nav>
@@ -59,8 +60,8 @@ unnamed. If the nav is rendered from a controller that does not call
 The first nav item will be highlighted when viewing an action in the
 BookgsController, and the second item will be highlighted when viewing an
 action in the AuthorsController. When viewing an action in a controller which
-does not call #nav_highlight, the third item will be highlighted by default as
-it is unnamed.
+does not call `#nav_highlight`, the third item will be highlighted by default
+as it is unnamed.
 
 ## Custom Configuration
 
@@ -96,4 +97,5 @@ $ gem install nav_highlighter
 Contribution directions go here.
 
 ## License
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the
+[MIT License](http://opensource.org/licenses/MIT).
