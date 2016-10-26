@@ -3,19 +3,6 @@ Tools for highlighting the active item in a nav element.
 
 ## Usage
 
-To use NavHighlighter you need to make the `#nav_item` helper method available
-to the views and the `#nav_highlight` method available to controllers.
-
-```ruby
-class ApplicationController
-  # Make #nav_item helper available to views.
-  helper NavHighlighter::Engine.helpers
-
-  # Make #nav_highlight available to controllers.
-  extend NavHighlighter::NavHighlighting
-end
-```
-
 In your controllers, call `#nav_highlight` to specify the name of the nav item
 that should be highlighted when views from that particular controller are
 rendered. The name of the nav item to be highlighted will be inferred from the
@@ -58,16 +45,16 @@ be unique within a nav element. This also goes for unnamed items.)
 ```
 
 The first nav item will be highlighted when viewing an action in the
-BookgsController, and the second item will be highlighted when viewing an
-action in the AuthorsController. When viewing an action in a controller which
-does not call `#nav_highlight`, the third item will be highlighted by default
-as it is unnamed.
+BooksController, and the second item will be highlighted when viewing an action
+in the AuthorsController. When viewing an action in a controller which does not
+call `#nav_highlight`, the third item will be highlighted by default as it is
+unnamed.
 
 ## Custom Configuration
 
 By default, the highlighted nav item will received the CSS class "active". This
-can be configured by calling `NavHighlighter.configure` (ideally from an
-initializer).
+can be configured by calling `NavHighlighter.configure`, say from an
+initializer.
 
 ```ruby
 NavHighlighter.configure do |config|
@@ -91,6 +78,15 @@ $ bundle
 Or install it yourself as:
 ```bash
 $ gem install nav_highlighter
+```
+
+Make the `#nav_highlight` action and `#nav_item` methods available to your
+controllers and views, respectively, by adding the following lines to your
+ApplicationController:
+
+```ruby
+helper NavHighlighter::Engine.helpers
+extend NavHighlighter::NavHighlighting
 ```
 
 ## Contributing
