@@ -53,7 +53,7 @@ unnamed.
 ## Custom Configuration
 
 By default, the highlighted nav item will received the CSS class "active". This
-can be configured by calling `NavHighlighter.configure`, say from an
+can be configured by calling `NavHighlighter.configure`, say, from an
 initializer.
 
 ```ruby
