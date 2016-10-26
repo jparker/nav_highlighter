@@ -8,6 +8,17 @@
   </head>
 
   <body>
+    <nav>
+      <ul>
+        <%= nav_item name: :books do %>
+          <%= link_to 'Books', :books %>
+        <% end %>
+        <%= nav_item name: :authors do %>
+          <%= link_to 'Authors', :authors %>
+        <% end %>
+        <%= nav_item do %>
+          <%= link_to 'Home', :home %>
+        <% end %>
     <%= yield %>
   </body>
 </html>
