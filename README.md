@@ -1,3 +1,5 @@
+# [![Build Status](https://travis-ci.org/jparker/nav_highlighter.svg?branch=master)](https://travis-ci.org/jparker/nav_highlighter)
+
 # NavHighlighter
 Tools for highlighting the active item in a nav element.
 
