@@ -82,13 +82,14 @@ Or install it yourself as:
 $ gem install nav_highlighter
 ```
 
-Make the `#nav_highlight` action and `#nav_item` methods available to your
-controllers and views, respectively, by adding the following lines to your
-ApplicationController:
+Make `#nav_highlight` available to your controller(s) by extending
+`NavHighlighter::NavHighlighting`. To make it available to all controllers,
+extend it from `ApplicationController`.
 
 ```ruby
-helper NavHighlighter::Engine.helpers
-extend NavHighlighter::NavHighlighting
+class ApplicationController
+  extend NavHighlighter::NavHighlighting
+end
 ```
 
 ## Contributing
